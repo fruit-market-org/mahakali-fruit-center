@@ -49,20 +49,22 @@ export function Logo({
 }) {
   const isLight = variant === "light";
   return (
-    <span className={`flex items-center gap-3 ${className}`}>
+    <span className={`flex min-w-0 items-center gap-2.5 sm:gap-3 ${className}`}>
       <LogoMark
-        className={`h-11 w-11 shrink-0 ${isLight ? "text-white" : "text-ink"}`}
+        className={`h-9 w-9 shrink-0 sm:h-11 sm:w-11 ${
+          isLight ? "text-white" : "text-ink"
+        }`}
       />
-      <span className="flex flex-col leading-tight">
+      <span className="flex min-w-0 flex-col leading-tight">
         <span
-          className={`font-display text-base font-semibold tracking-tight sm:text-lg ${
+          className={`font-display text-[15px] font-semibold leading-snug tracking-tight sm:text-lg ${
             isLight ? "text-white" : "text-ink"
           }`}
         >
           {COMPANY.shortName}
         </span>
         <span
-          className={`text-[11px] font-medium uppercase tracking-[0.18em] ${
+          className={`text-[10px] font-medium uppercase tracking-[0.16em] sm:text-[11px] ${
             isLight ? "text-white/70" : "text-moss"
           }`}
         >

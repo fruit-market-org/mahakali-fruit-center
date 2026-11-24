@@ -37,6 +37,11 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 
   body {
@@ -64,7 +69,13 @@
     width: 100%;
     margin-inline: auto;
     max-width: 80rem;
-    padding-inline: 1.25rem;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 420px) {
+    .container-page {
+      padding-inline: 1.25rem;
+    }
   }
 
   @media (min-width: 640px) {

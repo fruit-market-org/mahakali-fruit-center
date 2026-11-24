@@ -39,8 +39,8 @@ export function Header() {
           : "border-transparent bg-cream"
       }`}
     >
-      <div className="container-page flex h-[72px] items-center justify-between gap-4">
-        <Link href="/" aria-label="Go to home page" className="shrink-0">
+      <div className="container-page flex h-[68px] items-center justify-between gap-3 sm:h-[72px] sm:gap-4">
+        <Link href="/" aria-label="Go to home page" className="min-w-0">
           <Logo />
         </Link>
 
@@ -70,8 +70,12 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <WhatsAppButton className="hidden sm:inline-flex" />
+        <div className="flex shrink-0 items-center gap-2">
+          {/* Wrapper controls visibility: putting `hidden` on the button
+              itself loses to its own `inline-flex` in the cascade. */}
+          <span className="hidden sm:inline-flex">
+            <WhatsAppButton />
+          </span>
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
@@ -110,7 +114,9 @@ export function Header() {
               </Link>
             );
           })}
-          <WhatsAppButton className="mt-3 w-full sm:hidden" size="lg" />
+          <span className="mt-3 block sm:hidden">
+            <WhatsAppButton className="w-full" size="lg" />
+          </span>
         </nav>
       </div>
     </header>
